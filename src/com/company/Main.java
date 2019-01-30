@@ -26,7 +26,7 @@ public class Main {
             }
         }catch (InputMismatchException ime){
             OutPutClass op = new OutPutClass();
-            op.printDiv();
+            op.PrintCollection();
         }
     }
 

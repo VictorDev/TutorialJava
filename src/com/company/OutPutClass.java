@@ -7,6 +7,7 @@ import java.util.HashMap;
 public class OutPutClass {
     HashMap<Integer,Integer> countDublicate;
     int divider;
+    ArrayList<Integer> list;
     void PrintCollection(){
         printNum();
         MaxMin();
@@ -14,7 +15,7 @@ public class OutPutClass {
         printNoEven();
         printNum3or9();
         printNum5and7();
-        printXXX();
+        printDiv();
     }
 
     void MaxMin(){
@@ -22,7 +23,7 @@ public class OutPutClass {
         System.out.println("Наименьшее число: "+ Main.num.get(0) + " Наибольшее число: "+ Main.num.get(Main.num.size()-1));
     }
     void printNum(){
-        System.out.println("Все числа:");
+        System.out.print("Все числа: ");
         for( int t : Main.num){
             System.out.print(t+" ");
         }
@@ -30,7 +31,7 @@ public class OutPutClass {
     }
 
     void printEven(){
-        System.out.println("Все чётные числа числа:");
+        System.out.print("Все чётные числа числа: ");
         for( int t : Main.even){
             System.out.print(t+" ");
         }
@@ -38,7 +39,7 @@ public class OutPutClass {
     }
 
     void printNoEven(){
-        System.out.println("Все нечетные числа:");
+        System.out.print("Все нечетные числа: ");
         Main.noeven = Main.num;
         Main.noeven.removeAll(Main.even);
         for( int t : Main.noeven){
@@ -48,7 +49,7 @@ public class OutPutClass {
     }
 
     void printNum3or9(){
-        System.out.println("Числа которые делятся на 3 или на 9:");
+        System.out.print("Числа которые делятся на 3 или на 9: ");
         for( int t : Main.num3or9){
             System.out.print(t+" ");
         }
@@ -56,18 +57,13 @@ public class OutPutClass {
     }
 
     void printNum5and7(){
-        System.out.println("Числа которые делятся на 5 и на 7:");
+        System.out.print("Числа которые делятся на 5 и на 7: ");
         for( int t : Main.num5and7){
             System.out.print(t+" ");
         }
         System.out.println();
     }
 
-    void printXXX(){
-        for(String s:Main.xxx){
-            System.out.println(s);
-        }
-    }
 
     void dublicate(){
         countDublicate = new HashMap<>();
@@ -78,7 +74,7 @@ public class OutPutClass {
         }
     }
 
-    ArrayList<Integer> list;
+
     void maxDublicate(){
         list = new ArrayList<>();
         Integer am;
