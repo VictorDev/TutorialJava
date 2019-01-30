@@ -1,8 +1,12 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 public class OutPutClass {
+    HashMap<Integer,Integer> countDublicate;
+    int divider;
     void PrintCollection(){
         printNum();
         MaxMin();
@@ -64,4 +68,36 @@ public class OutPutClass {
             System.out.println(s);
         }
     }
+
+    void dublicate(){
+        countDublicate = new HashMap<>();
+        Integer am;
+        for(Integer i:Main.commonDiv){
+            am = countDublicate.get(i);
+            countDublicate.put(i, am==null? 1:am+1);
+        }
+    }
+
+    ArrayList<Integer> list;
+    void maxDublicate(){
+        list = new ArrayList<>();
+        Integer am;
+        for(Integer i: Main.commonDiv){
+            am = countDublicate.get(i);
+            if(am == Main.num.size()){
+                list.add(i);
+            }
+        }
+        Collections.sort(list);
+        divider = list.get(list.size()-1);
+    }
+
+
+    void printDiv(){
+        dublicate();
+        maxDublicate();
+        System.out.println("Наибольший общий делитель: "+ divider);
+    }
+
+
 }

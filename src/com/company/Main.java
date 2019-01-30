@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
 
 
-    static ArrayList<Integer> num, even, noeven, num3or9, num5and7, xxxnum;
+    static ArrayList<Integer> num, even, noeven, num3or9, num5and7, xxxnum, commonDiv;
     static ArrayList<String> xxx;
 
     public static void main(String[] args){
@@ -22,12 +22,12 @@ public class Main {
                 wk.is39();
                 wk.is57();
                 wk.isXXXNum();
+                wk.commonDiv();
             }
         }catch (InputMismatchException ime){
             OutPutClass op = new OutPutClass();
-            op.PrintCollection();
+            op.printDiv();
         }
-
     }
 
     static void CreateCollection(){
@@ -36,9 +36,10 @@ public class Main {
         noeven = new ArrayList<Integer>();
         num3or9 = new ArrayList<Integer>();
         num5and7 = new ArrayList<Integer>();
+        commonDiv = new ArrayList<>();
         xxxnum = new ArrayList<Integer>();
         xxx = new ArrayList<String>();
 
-    }//12
+    }
 
 }
