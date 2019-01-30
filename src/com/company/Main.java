@@ -39,6 +39,6 @@ public class Main {
         xxxnum = new ArrayList<Integer>();
         xxx = new ArrayList<String>();
 
-    }
+    }//12
 
 }
