@@ -13,20 +13,27 @@ public class Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         CreateCollection();
+        System.out.println("Введите целое число. Введите 0 чтобы завершить ввод");
         try {
             while (sc.hasNext()) {
                 Integer x = sc.nextInt();
-                num.add(x);
-                WorkClass wk = new WorkClass(x);
-                wk.isEven();
-                wk.is39();
-                wk.is57();
-                wk.isXXXNum();
-                wk.commonDiv();
+                if (!(x.equals(0))) {
+                    num.add(x);
+                    WorkClass wk = new WorkClass(x);
+                    wk.isEven();
+                    wk.is39();
+                    wk.is57();
+                    wk.isXXXNum();
+                    wk.commonDiv();
+                }else {
+                    OutPutClass op = new OutPutClass();
+                    op.PrintCollection();
+                    op.calculateMultiple();
+                    op.printM();
+                }
             }
         }catch (InputMismatchException ime){
-            OutPutClass op = new OutPutClass();
-            op.PrintCollection();
+            System.out.println("Некорректный ввод");
         }
     }
 

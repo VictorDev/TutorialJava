@@ -5,9 +5,13 @@ import java.util.Collections;
 import java.util.HashMap;
 
 public class OutPutClass {
+
     HashMap<Integer,Integer> countDublicate;
     int divider;
     ArrayList<Integer> list;
+    int[] everyNum;
+    int multiple;
+    HashMap<Integer,Integer> hm = new HashMap<>();
     void PrintCollection(){
         printNum();
         MaxMin();
@@ -94,6 +98,49 @@ public class OutPutClass {
         maxDublicate();
         System.out.println("Наибольший общий делитель: "+ divider);
     }
+    void calculateMultiple(){
+        boolean chek = false;
+        Integer am;
+        int n=1;
+        firstCall();
+        while (!chek){
+            int index = 0;
+            for(Integer i:Main.num){
+                am = everyNum[index];
+                am += i;
+                try {
+                    int u = hm.get(am);
+                    int costil=u+1;
+                if (costil == Main.num.size()) {
+                    chek = true;
+                    multiple = am;
+                } else {
+                    hm.put(am,u+1);
+                }
+                }catch (NullPointerException npe){
+                    hm.put(am,1);
+                }
+                everyNum[index] = am;
+                index++;
+            }
+            n++;
+            System.out.println(); //проверка
+            if(n>20){System.out.println("Не удалось найти общее кратное"); return;}
+        }
+    }
 
+    void firstCall(){
+        everyNum = new int[Main.num.size()];
+        int x=0;
+        for(Integer i:Main.num){
+            hm.put(i,1);
+            everyNum[x]=i;
+            x++;
+        }
+    }
+
+    void printM(){
+        System.out.println("Наименьшее общее кратное: "+multiple);
+    }
 
 }

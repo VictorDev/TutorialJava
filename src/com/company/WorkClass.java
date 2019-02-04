@@ -1,7 +1,9 @@
 package com.company;
 
+
 public class WorkClass {
     private int x;
+
     WorkClass(int x){
         this.x = x;
     }
@@ -45,4 +47,6 @@ public class WorkClass {
             }
         }
     }
+
+
 }
